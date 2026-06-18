@@ -1,0 +1,16 @@
+Read the following transcript based on the director's note.
+
+# Director's note
+Style: Professional, authoritative, clear articulation with standard broadcast cadence.
+
+## Scene:
+A quiet, old library on a rainy night. Lightning occasionally flashes through the tall, arched windows.
+
+## Sample Context:
+Cyber-Philosophical Noir. Clinical yet haunting delivery, punctuated by heavy, atmospheric silence. The tone is cold, intellectual, and deeply existential.
+
+## Transcript:
+Speaker 1: สวัสดีค่ะทุกคน ยินดีต้อนรับเข้าสู่ Uncle Quin Podcast กับฟ้าค่ะ
+Speaker 2: และผม ลุงควิน ครับ
+Speaker 1: ลุงควินคะ จากอีพีที่แล้ว (EP.29) ที่เราคุยกันเรื่องกฎ Power Laws ว่าให้เราใจเย็น ๆ ค่อย ๆ ทำ Micro-Refactoring สะสมดอกเบี้ยทบต้นไป อย่าเพิ่งรีบโละเขียนใหม่หมด... ฟ้าเอาไปคิดตามแล้วมันก็ดีนะคะ แต่ในความเป็นจริงของปี 2026 เนี้ย ฟ้ามี "ตัวช่วย" ที่ทำให้สมการนี้เปลี่ยนไปเลยค่ะ
+Speaker 2: (หัวเราะ) หืม? ตัวช่วยที่ว่านี่คงหนีไม่พ้น AI Code Assistant ทั้งหลายใช่ไหมล่ะ?
