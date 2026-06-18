@@ -38,8 +38,17 @@ def main():
         
         for idx, (speaker, text) in enumerate(dialogue):
             print(f"🎙️ Generating: Line {idx + 1} ({speaker})...")
+            
+            # ปรับสไตล์บรีฟให้ชัดเจนขึ้นสำหรับความเป็นผู้ประกาศข่าว
+            newscaster_style = (
+                "Style: Professional newscaster, authoritative, formal broadcast cadence, "
+                "clear Thai articulation, steady pacing, objective tone."
+            )
+            
             voice_name = "Aoede" if speaker == "Speaker 1" else "Puck"
-            full_prompt = f"[{style_context}]. Say naturally: {text}"
+            
+            # นำบรีฟผู้ประกาศข่าวและบทพูดมารวมกัน
+            full_prompt = f"[{newscaster_style}]. Read the following text as a formal news broadcast: {text}"
 
             response = client.models.generate_content(
                 model="gemini-3.1-flash-tts-preview",
