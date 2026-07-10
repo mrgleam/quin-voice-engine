@@ -74,7 +74,9 @@ def translate_emotional_cues(text: str) -> str:
         "อ้าว": "surprised",
         "อึ้ก": "gasp",
         "โห": "wowed",
-        "ยิ้ม": "smiling"
+        "ยิ้ม": "smiling",
+        "ทำหน้าประหลาดใจ": "surprised",
+        "ประหลาดใจ": "surprised"
     }
     for th, en in cues_map.items():
         processed = re.sub(rf"[(\[][\s]*{th}[\s]*[)\]]", f"[{en}]", processed)
