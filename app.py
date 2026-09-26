@@ -101,6 +101,7 @@ def main():
     parser.add_argument("--output", "-o", default="output.wav", help="Path to output WAV file (default: output.wav)")
     parser.add_argument("--no-cache", action="store_true", help="Disable cache and force regeneration")
     parser.add_argument("--clear-cache", action="store_true", help="Clear the cache directory and exit")
+    parser.add_argument("--model", "-m", default="gemini-3.1-flash-tts-preview", help="Gemini TTS model name (default: gemini-3.1-flash-tts-preview)")
     parser.add_argument("--file-style", action="store_true", help="Use style from input.txt instead of conversational style")
     args = parser.parse_args()
 
@@ -121,6 +122,7 @@ def main():
             return
 
         print(f"📖 Loaded '{args.input}' with {len(dialogue)} dialogue turns.")
+        print(f"🤖 Using model: {args.model}")
         
         client = genai.Client()
         dialogue_segments = []
@@ -164,8 +166,8 @@ def main():
             if text != clean_text:
                 print(f"   Enhanced: {clean_text[:60]}...")
 
-            # 3. Check / fetch cache (cache key depends on voice, style, and cleaned text)
-            cache_payload = f"{voice_name}:{style_brief}:{clean_text}".encode("utf-8")
+            # 3. Check / fetch cache (cache key depends on model, voice, style, and cleaned text)
+            cache_payload = f"{args.model}:{voice_name}:{style_brief}:{clean_text}".encode("utf-8")
             cache_hash = hashlib.sha256(cache_payload).hexdigest()
             cache_file = os.path.join(".cache", f"{cache_hash}.raw")
 
@@ -177,7 +179,7 @@ def main():
             else:
                 print("   🌐 [Cache Miss] Generating audio via Gemini API...")
                 response = client.models.generate_content(
-                    model="gemini-3.1-flash-tts-preview",
+                    model=args.model,
                     contents=full_prompt,
                     config=types.GenerateContentConfig(
                         response_modalities=["AUDIO"],
